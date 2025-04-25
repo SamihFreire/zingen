@@ -1,0 +1,52 @@
+.py-base {
+    padding-block: var(--py-base);
+}
+
+.py-lg {
+    padding-block: var(--py-lg);
+}
+
+.py-xl {
+    padding-block: var(--py-xl);
+}
+
+.px-lg {
+    padding-inline: var(--px-lg);
+}
+
+.desktop-only {
+    display: none; /* Esconde o local que a classe foi referenciada */
+}
+
+.even-columns { /* Colunas constantes, para mobile faz com que o conteudo fique 1 abaixo do outro */
+    display: grid;
+    gap: 1rem;
+}
+
+.container {
+    --max-width: 375px;
+    width: min(var(--max-width), 100% - var(--px-lg) * 2);
+    
+    /* Outra forma de fazer o width */
+    /* max-width: var(--max-width);
+    width: calc(100% - var(--px-lg) * 2); 
+    o --px-lg representa a margem */
+
+    margin-inline: auto;
+    border: solid violet;
+}
+
+@media (width >= 80em) { /* para telas grandes */
+    .container {
+        --max-width: 80em; /* 1280px */
+    }
+
+    .desktop-only {
+        display: initial; /* vai pegar o padrão para exibir */
+    }
+
+    .even-columns { /* No desktop faz o conteudo ficar 1 do lado do outro */
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}
