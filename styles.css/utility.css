@@ -27,8 +27,16 @@
     display: flex;
 }
 
+.items-center {
+    align-items: center;
+}
+
 .gap-1 {
     gap: 1rem;
+}
+
+.gap-1\.5 {
+    gap: 1.5rem;
 }
 
 .grid {
@@ -45,7 +53,7 @@
     o --px-lg representa a margem */
 
     margin-inline: auto;
-    border: solid violet;
+    /* border: solid violet; */
 }
 
 @media (width >= 80em) { /* para telas grandes */
